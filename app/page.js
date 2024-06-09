@@ -1,95 +1,119 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Cursor from "@/components/Cursor/Cursor";
+import Nav from "@/components/Nav";
+import classes from "./page.module.scss";
 
 export default function Home() {
+  const [mousePosition, setMousePosition] = useState({
+    x: typeof window !== "undefined" ? window.innerWidth / 2 : 0,
+    y: typeof window !== "undefined" ? window.innerHeight / 2 : 0,
+  });
+  const [cursorVariant, setCursorVariant] = useState("default");
+  const [followVariant, setFollowVariant] = useState("follow");
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
+  const variants = {
+    default: {
+      x: mousePosition.x - 4,
+      y: mousePosition.y - 4,
+      transition: {
+        type: "spring",
+        stiffness: 1500,
+        damping: 140,
+        mass: 1,
+      },
+    },
+    zoom: {
+      x: mousePosition.x - 8,
+      y: mousePosition.y - 8,
+      transition: {
+        type: "spring",
+        stiffness: 1500,
+        damping: 50,
+        mass: 1,
+      },
+      height: 16,
+      width: 16,
+      border: "2px solid white",
+      backgroundColor: "#aaaaaa",
+    },
+    follow: {
+      x: mousePosition.x - 42,
+      y: mousePosition.y - 42,
+      transition: {
+        type: "spring",
+        stiffness: 500,
+        damping: 100,
+        mass: 2,
+      },
+    },
+    vanish: {
+      x: mousePosition.x,
+      y: mousePosition.y,
+      transition: {
+        type: "spring",
+        stiffness: 500,
+        damping: 50,
+        mass: 2,
+      },
+      height: 0,
+      width: 0,
+      opacity: 0,
+      border: 0,
+    },
+  };
+
+  const textEnter = () => {
+    setCursorVariant("zoom");
+    setFollowVariant("vanish");
+  };
+  const textLeave = () => {
+    setCursorVariant("default");
+    setFollowVariant("follow");
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <section
+      className={classes.main}
+      style={{ width: "100vw", height: "100vh" }}
+    >
+      <div className={classes.grid} />
+      <Nav textEnter={textEnter} textLeave={textLeave} />
+      <Cursor
+        variants={variants}
+        cursorVariant={cursorVariant}
+        followVariant={followVariant}
+      />
+      <p
+        className="position-fixed font-blue"
+        style={{
+          fontFamily: "Abril FatFace",
+          fontSize: "30vmin",
+          letterSpacing: "-0.3rem",
+          opacity: "1",
+          zIndex: "-1",
+          bottom: "1vw",
+          left: "2vw",
+        }}
+      >
+        JS.
+      </p>
+    </section>
   );
 }

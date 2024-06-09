@@ -1,0 +1,17 @@
+$colors: (
+  "gray": #5b5c60,
+  "dark-blue": #020a13,
+);
+
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background: $color;
+  }
+}
+// bg-green, bg-light-green
+
+@each $name, $color in $colors {
+  .border-#{$name} {
+    border: solid 1px $color;
+  }
+}
