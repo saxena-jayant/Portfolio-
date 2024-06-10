@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./Nav.module.scss";
+import Image from "next/image";
 
 const index = ({ textEnter, textLeave }) => {
   return (
@@ -9,14 +10,14 @@ const index = ({ textEnter, textLeave }) => {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <p
-            className={"font-gray-2 font-48 mb-0 " + classes.logo}
+          <Image
+            src="/images/Frame.svg"
+            alt=""
+            width={60}
+            height={60}
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
-            style={{ letterSpacing: "0.2rem" }}
-          >
-            JS
-          </p>
+          />
           <button
             className="navbar-toggler"
             type="button"
@@ -35,7 +36,7 @@ const index = ({ textEnter, textLeave }) => {
             <ul className="navbar-nav">
               <li className={"nav-item position-relative " + classes.link1}>
                 <p
-                  className="mb-0 font-16 font-gray-2 px-3 py-2"
+                  className="mb-0 font-14 font-gray-2 px-3 py-2"
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
                 >
@@ -45,7 +46,7 @@ const index = ({ textEnter, textLeave }) => {
               </li>
               <li className={"nav-item position-relative " + classes.link2}>
                 <p
-                  className="mb-0 font-16 font-gray-2 px-3 py-2"
+                  className="mb-0 font-14 font-gray-2 px-3 py-2"
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
                 >
@@ -55,7 +56,7 @@ const index = ({ textEnter, textLeave }) => {
               </li>
               <li className={"nav-item position-relative " + classes.link3}>
                 <p
-                  className="mb-0 font-16 font-gray-2 px-3 py-2"
+                  className="mb-0 font-14 font-gray-2 px-3 py-2"
                   onMouseEnter={textEnter}
                   onMouseLeave={textLeave}
                 >

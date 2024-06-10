@@ -110,8 +110,7 @@ export default function Home() {
           letterSpacing: "-0.3rem",
           opacity: "1",
           zIndex: "-1",
-          bottom: "1vw",
-          left: "2vw",
+          bottom: "0px",
         }}
       >
         JS.
