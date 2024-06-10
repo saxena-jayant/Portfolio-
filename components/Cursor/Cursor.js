@@ -2,9 +2,9 @@ import React from "react";
 import classes from "./Cursor.module.scss";
 import { motion } from "framer-motion";
 
-const Cursor = ({ variants, cursorVariant, followVariant }) => {
+const Cursor = ({ showPointer, variants, cursorVariant, followVariant }) => {
   return (
-    <React.Fragment>
+    <div style={showPointer ? { opacity: "1" } : { opacity: "0" }}>
       <motion.div
         className={classes.cursor}
         variants={variants}
@@ -15,7 +15,7 @@ const Cursor = ({ variants, cursorVariant, followVariant }) => {
         variants={variants}
         animate={followVariant}
       />
-    </React.Fragment>
+    </div>
   );
 };
 

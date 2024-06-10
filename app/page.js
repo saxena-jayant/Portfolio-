@@ -13,6 +13,7 @@ export default function Home() {
   });
   const [cursorVariant, setCursorVariant] = useState("default");
   const [followVariant, setFollowVariant] = useState("follow");
+  const [showPointer, setShowPointer] = useState(false);
 
   useEffect(() => {
     const mouseMove = (e) => {
@@ -20,6 +21,7 @@ export default function Home() {
         x: e.clientX,
         y: e.clientY,
       });
+      setShowPointer(true);
     };
 
     window.addEventListener("mousemove", mouseMove);
@@ -97,6 +99,7 @@ export default function Home() {
       <div className={classes.grid} />
       <Nav textEnter={textEnter} textLeave={textLeave} />
       <Cursor
+        showPointer={showPointer}
         variants={variants}
         cursorVariant={cursorVariant}
         followVariant={followVariant}
