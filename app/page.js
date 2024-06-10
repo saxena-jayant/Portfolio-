@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Cursor from "@/components/Cursor/Cursor";
 import Nav from "@/components/Nav";
+import Main from "@/components/Main";
 import classes from "./page.module.scss";
 
 export default function Home() {
@@ -100,11 +101,12 @@ export default function Home() {
         cursorVariant={cursorVariant}
         followVariant={followVariant}
       />
+      <Main />
       <p
         className="position-fixed font-blue"
         style={{
           fontFamily: "Abril FatFace",
-          fontSize: "30vmin",
+          fontSize: "29vmin",
           letterSpacing: "-0.3rem",
           opacity: "1",
           zIndex: "-1",
