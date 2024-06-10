@@ -10,7 +10,7 @@ const index = ({ textEnter, textLeave }) => {
       >
         <div className="container-fluid">
           <p
-            className="font-gray-2 font-48 mb-0"
+            className={"font-gray-2 font-48 mb-0 " + classes.logo}
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
             style={{ letterSpacing: "0.2rem" }}
