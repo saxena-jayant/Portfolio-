@@ -7,7 +7,7 @@ const index = () => {
   return (
     <div
       className="container-xxl font-gray-2"
-      style={{ padding: "0px 100px", maxWidth: "1150px", marginTop: "100px" }}
+      style={{ padding: "0px 100px", maxWidth: "1150px", marginTop: "70px" }}
     >
       <p
         className="font-48"

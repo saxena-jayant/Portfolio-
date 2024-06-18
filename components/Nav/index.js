@@ -1,12 +1,10 @@
-'use client'
-
 import React, { useState, useEffect } from "react";
 import classes from "./Nav.module.scss";
 import Image from "next/image";
 import { ROUTES } from "@/shared/routes";
 import Link from "next/link";
 
-const index = ({ textEnter, textLeave }) => {
+const Nav = ({ textEnter, textLeave }) => {
   const [links] = useState([
     { name: "About", path: ROUTES.ABOUT.path },
     { name: "Projects", path: ROUTES.PROJECT.path },
@@ -18,11 +16,9 @@ const index = ({ textEnter, textLeave }) => {
     const activeLink = window.location.pathname;
     if (activeLink === "/") {
       setSelectedLink("About");
-    }
-    if (activeLink === "/projects") {
+    } else if (activeLink === "/projects") {
       setSelectedLink("Projects");
-    }
-    if (activeLink === "/contact_me") {
+    } else if (activeLink === "/contact_me") {
       setSelectedLink("Contact");
     }
   }, []);
@@ -61,11 +57,11 @@ const index = ({ textEnter, textLeave }) => {
           >
             <ul className="navbar-nav">
               {links.map((item, i) => (
-                <Link href={item.path} style={{ textDecoration: "none" }}>
-                  <li
-                    key={i}
-                    className={"nav-item position-relative " + classes.link}
-                  >
+                <li
+                  key={i}
+                  className={"nav-item position-relative " + classes.link}
+                >
+                  <Link href={item.path} style={{ textDecoration: "none" }}>
                     <p
                       className="mb-0 font-14 font-gray-2 px-3 py-2"
                       onMouseEnter={textEnter}
@@ -76,9 +72,9 @@ const index = ({ textEnter, textLeave }) => {
                     >
                       {item.name}
                     </p>
-                    <div className={classes.underline} />
-                  </li>
-                </Link>
+                  </Link>
+                  <div className={classes.underline} />
+                </li>
               ))}
             </ul>
           </div>
@@ -88,4 +84,4 @@ const index = ({ textEnter, textLeave }) => {
   );
 };
 
-export default index;
+export default Nav;

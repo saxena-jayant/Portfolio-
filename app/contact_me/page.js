@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <Transition>
       <section style={{ width: "100vw", height: "100vh" }}>
+        <title>Contact me | Jayant Saxena</title>
         <div className={classes.grid} />
         <Nav textEnter={textEnter} textLeave={textLeave} />
         <Cursor cursorVariant={cursorVariant} followVariant={followVariant} />
