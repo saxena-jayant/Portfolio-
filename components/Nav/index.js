@@ -17,6 +17,12 @@ const index = ({ textEnter, textLeave }) => {
     if (activeLink === "/") {
       setSelectedLink("About");
     }
+    if (activeLink === "/projects") {
+      setSelectedLink("Projects");
+    }
+    if (activeLink === "/contact_me") {
+      setSelectedLink("Contact");
+    }
   }, []);
 
   return (

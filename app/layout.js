@@ -1,6 +1,5 @@
 import "../assets/styles/globals.scss";
 import Script from "next/script";
-import Transition from "@/components/Transition";
 
 export const metadata = {
   title: "About | Jayant Saxena",
@@ -28,9 +27,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         ></Script>
       </head>
-      <body>
-        <Transition>{children}</Transition>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

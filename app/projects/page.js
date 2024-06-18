@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Cursor from "@/components/Cursor/Cursor";
 import Nav from "@/components/Nav";
-import Main from "@/components/Main";
-import classes from "./page.module.scss";
+import Project from "@/components/Project";
+import classes from "../page.module.scss";
 import Transition from "@/components/Transition";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
         <div className={classes.grid} />
         <Nav textEnter={textEnter} textLeave={textLeave} />
         <Cursor cursorVariant={cursorVariant} followVariant={followVariant} />
-        <Main />
+        <Project />
         <p
           className="position-fixed font-blue"
           style={{
