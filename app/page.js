@@ -92,10 +92,7 @@ export default function Home() {
   };
 
   return (
-    <section
-      className={classes.main}
-      style={{ width: "100vw", height: "100vh" }}
-    >
+    <section style={{ width: "100vw", height: "100vh" }}>
       <div className={classes.grid} />
       <Nav textEnter={textEnter} textLeave={textLeave} />
       <Cursor

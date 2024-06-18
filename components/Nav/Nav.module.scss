@@ -18,9 +18,7 @@
   border-radius: 50%;
 }
 
-.underline1,
-.underline2,
-.underline3 {
+.underline {
   content: "";
   width: 0%;
   height: 1px;
@@ -29,9 +27,15 @@
   transition: all 0.3s ease-in;
 }
 
-.link1:hover .underline1,
-.link2:hover .underline2,
-.link3:hover .underline3 {
+.link:hover .underline {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #c6c6c6;
+  position: absolute;
+}
+
+.selectedPage {
   content: "";
   width: 100%;
   height: 1px;

@@ -1,0 +1,43 @@
+.footer {
+  transition: all 1s ease;
+  width: fit-content;
+}
+
+.footer:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer > svg {
+  position: relative;
+  margin-left: 1rem;
+  top: 2px;
+  animation: forward 0.5s infinite alternate;
+}
+
+@keyframes forward {
+  from {
+    margin-left: 1rem;
+  }
+  to {
+    margin-left: 2rem;
+  }
+}
+
+.project {
+  color: #fff;
+}
+
+.project:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.contact {
+  color: #fff;
+}
+
+.contact:hover {
+  color: #007bff;
+  text-decoration: underline;
+}
