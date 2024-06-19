@@ -57,7 +57,7 @@ const index = () => {
           required
         />
         <input
-          type="text"
+          type="email"
           className="px-4 text-white w-100 py-2 mt-4"
           style={{
             background: "transparent",
