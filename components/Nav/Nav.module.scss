@@ -42,3 +42,12 @@
   background-color: #c6c6c6;
   position: absolute;
 }
+
+@media only screen and (max-width: 500px) {
+  .container {
+    padding: 16px 16px 0px 16px;
+  }
+  .mobileView {
+    margin-top: 16px;
+  }
+}

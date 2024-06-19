@@ -8,7 +8,7 @@ import classes from "../Main/Main.module.scss";
 const index = () => {
   return (
     <div
-      className="container-xxl font-gray-2"
+      className={"container-xxl font-gray-2 " + classes.mobileView}
       style={{ padding: "0px 100px", maxWidth: "1150px", marginTop: "70px" }}
     >
       <p
@@ -42,6 +42,7 @@ const index = () => {
           marginTop: "30px",
           fontFamily: "Neurial-Regular",
         }}
+        className={classes.mobileViewForm}
       >
         <input
           type="text"

@@ -18,3 +18,9 @@
   left: 0px;
   pointer-events: none;
 }
+
+@media only screen and (max-width: 500px) {
+  .mobileView {
+    display: none;
+  }
+}

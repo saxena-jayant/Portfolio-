@@ -55,7 +55,7 @@ const Nav = ({ textEnter, textLeave }) => {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <ul className="navbar-nav">
+            <ul className={"navbar-nav " + classes.mobileView}>
               {links.map((item, i) => (
                 <li
                   key={i}

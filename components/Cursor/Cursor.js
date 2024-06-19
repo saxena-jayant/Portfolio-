@@ -77,7 +77,10 @@ const Cursor = ({ cursorVariant, followVariant }) => {
   };
 
   return (
-    <div style={showPointer ? { opacity: "1" } : { opacity: "0" }}>
+    <div
+      className={classes.mobileView}
+      style={showPointer ? { opacity: "1" } : { opacity: "0" }}
+    >
       <motion.div
         className={classes.cursor}
         variants={variants}

@@ -8,8 +8,12 @@ import { ROUTES } from "@/shared/routes";
 const index = () => {
   return (
     <div
-      className="container-xxl font-gray-2"
-      style={{ padding: "0px 100px", maxWidth: "1150px", marginTop: "100px" }}
+      className={"container-xxl font-gray-2 " + classes.mobileView}
+      style={{
+        padding: "0px 100px 40px 0px",
+        maxWidth: "1150px",
+        marginTop: "100px",
+      }}
     >
       <motion.h1
         data-text="I'M JAYANT SAXENA"

@@ -42,3 +42,13 @@
   color: #007bff;
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 500px) {
+  .mobileView {
+    padding: 0px 40px 100px 40px !important;
+    margin-top: 0px !important;
+  }
+  .mobileViewForm {
+    width: 100% !important;
+  }
+}

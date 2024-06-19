@@ -26,7 +26,7 @@ const Project = () => {
 
   return (
     <div
-      className="container-xxl font-gray-2"
+      className={"container-xxl font-gray-2 " + classes.mobileView}
       style={{ padding: "0px 100px", maxWidth: "1150px", marginTop: "70px" }}
     >
       <p
@@ -38,7 +38,7 @@ const Project = () => {
       >
         Projects.
       </p>
-      <div className="d-flex" style={{ gap: "24px" }}>
+      <div className="d-flex flex-wrap" style={{ gap: "24px" }}>
         {projects.map((item, i) => (
           <div
             key={i}
@@ -63,7 +63,7 @@ const Project = () => {
               {item.desc}
             </p>
             <div
-              className="d-flex align-items-center mt-3 mb-3"
+              className="d-flex align-items-center flex-wrap mt-3 mb-3"
               style={{ gap: "8px" }}
             >
               {item.languages.map((each, e) => (
@@ -127,7 +127,7 @@ const Project = () => {
               className="mb-0 font-16 font-gray-2"
               style={{ fontFamily: "Neurial-Regular" }}
             >
-              Are you convinced to contact me now ?
+              Ready to contact me now ?
             </span>
           </Link>
           <svg
