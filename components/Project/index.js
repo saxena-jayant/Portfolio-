@@ -5,7 +5,7 @@ import { ROUTES } from "@/shared/routes";
 import { getTransitions } from "@/utils";
 import classes from "../Main/Main.module.scss";
 
-const index = () => {
+const Project = () => {
   const [projects, setProjects] = useState([
     {
       title: "Zooco",
@@ -146,4 +146,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Project;
