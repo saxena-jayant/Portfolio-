@@ -10,7 +10,7 @@ const Project = () => {
     {
       title: "Zooco",
       desc: "Zooco is a platform for preventive pet care that helps pet parents understand their dog's health and wellness needs.",
-      languages: ["Next.js", "CSS & Sass", "Express.js"],
+      languages: ["Next.js", "CSS & Sass", "Node.js & Express.js", "Web socket", "MySQL"],
       project_link: "https://app.zooco.pet/",
       secondary_desc: "Live On Play Store",
       secondary_link:
