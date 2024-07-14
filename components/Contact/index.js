@@ -5,7 +5,7 @@ import { getTransitions } from "@/utils";
 import Link from "next/link";
 import classes from "../Main/Main.module.scss";
 
-const index = () => {
+const index = ({ textEnter, textLeave }) => {
   return (
     <div
       className={"container-xxl font-gray-2 " + classes.mobileView}
@@ -36,7 +36,8 @@ const index = () => {
         </span>
       </p>
       <form
-        action=""
+        action="https://formspree.io/f/xrbzbkbr"
+        method="POST"
         style={{
           width: "56%",
           marginTop: "30px",
@@ -46,6 +47,7 @@ const index = () => {
       >
         <input
           type="text"
+          name="name"
           className="px-4 text-white w-100 py-2"
           style={{
             background: "transparent",
@@ -56,9 +58,12 @@ const index = () => {
           placeholder="Name"
           aria-required={true}
           required
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
         />
         <input
           type="email"
+          name="email"
           className="px-4 text-white w-100 py-2 mt-4"
           style={{
             background: "transparent",
@@ -69,9 +74,12 @@ const index = () => {
           placeholder="Email"
           aria-required={true}
           required
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
         />
         <textarea
           type="text"
+          name="message"
           className="px-4 text-white w-100 py-2 mt-4"
           style={{
             background: "transparent",
@@ -84,11 +92,15 @@ const index = () => {
           placeholder="Message"
           aria-required={true}
           required
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
         />
         <button
           className="mt-4 bg-gray-2 font-15"
           style={{ padding: "14px 40px", borderRadius: "6px" }}
           type="submit"
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
         >
           Send Message
         </button>

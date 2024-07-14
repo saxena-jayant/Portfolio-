@@ -27,7 +27,7 @@ export default function Home() {
         <div className={classes.grid} />
         <Nav textEnter={textEnter} textLeave={textLeave} />
         <Cursor cursorVariant={cursorVariant} followVariant={followVariant} />
-        <Contact />
+        <Contact textEnter={textEnter} textLeave={textLeave} />
         <p
           className="position-fixed font-blue"
           style={{

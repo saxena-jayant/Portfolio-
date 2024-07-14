@@ -3,6 +3,7 @@ import classes from "./Nav.module.scss";
 import Image from "next/image";
 import { ROUTES } from "@/shared/routes";
 import Link from "next/link";
+import Resume from "../../components/Resume";
 
 const Nav = ({ textEnter, textLeave }) => {
   const [links] = useState([
@@ -55,7 +56,7 @@ const Nav = ({ textEnter, textLeave }) => {
             className="collapse navbar-collapse justify-content-end"
             id="navbarNav"
           >
-            <ul className={"navbar-nav " + classes.mobileView}>
+            <ul className={"navbar-nav me-3 " + classes.mobileView}>
               {links.map((item, i) => (
                 <li
                   key={i}
@@ -77,6 +78,7 @@ const Nav = ({ textEnter, textLeave }) => {
                 </li>
               ))}
             </ul>
+            <Resume textEnter={textEnter} textLeave={textLeave} />
           </div>
         </div>
       </nav>
