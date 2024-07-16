@@ -33,7 +33,7 @@ const Nav = ({ textEnter, textLeave }) => {
         <div className="container-fluid">
           <Link href={ROUTES.ABOUT.path} style={{ textDecoration: "none" }}>
             <Image
-              src="/images/Frame.svg"
+              src="./images/Frame.svg"
               alt=""
               width={60}
               height={60}
