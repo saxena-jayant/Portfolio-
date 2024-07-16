@@ -4,7 +4,7 @@ import Image from "next/image";
 import classes from "./Resume.module.scss";
 
 const index = ({ textEnter, textLeave }) => {
-  const resume = "./Resume.pdf";
+  const resume = "/Resume.pdf";
 
   const handleDownload = () => {
     axios({
@@ -34,7 +34,7 @@ const index = ({ textEnter, textLeave }) => {
     >
       Resume
       <Image
-        src="./images/download.svg"
+        src="/images/download.svg"
         width={26}
         height={26}
         style={{ paddingLeft: "4px" }}

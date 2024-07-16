@@ -7,7 +7,7 @@ export const metadata = {
   link: [
     {
       rel: "icon",
-      href: "./favicon.ico",
+      href: "/favicon.ico",
     },
   ],
 };

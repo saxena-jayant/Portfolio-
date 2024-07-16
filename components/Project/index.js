@@ -100,7 +100,7 @@ const Project = () => {
                   Project Link
                 </p>
                 <img
-                  src="./images/link.svg"
+                  src="/images/link.svg"
                   alt=""
                   className="position-relative"
                   style={{ width: "18px", left: "0.7rem" }}
