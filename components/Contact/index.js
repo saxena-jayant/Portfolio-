@@ -5,7 +5,7 @@ import { getTransitions } from "@/utils";
 import Link from "next/link";
 import classes from "../Main/Main.module.scss";
 
-const index = ({ textEnter, textLeave }) => {
+const index = ({ textEnter, textLeave, setSelectedSection }) => {
   return (
     <div
       className={"container-xxl font-gray-2 " + classes.mobileView}
@@ -30,6 +30,12 @@ const index = ({ textEnter, textLeave }) => {
         <span
           style={{
             fontFamily: "Neurial-Bold",
+          }}
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          onClick={(e) => {
+            window.location.href = "mailto:hello.jayantsaxena@gmail.com";
+            e.preventDefault();
           }}
         >
           hello.jayantsaxena@gmail.com
@@ -58,8 +64,6 @@ const index = ({ textEnter, textLeave }) => {
           placeholder="Name"
           aria-required={true}
           required
-          onMouseEnter={textEnter}
-          onMouseLeave={textLeave}
         />
         <input
           type="email"
@@ -74,8 +78,6 @@ const index = ({ textEnter, textLeave }) => {
           placeholder="Email"
           aria-required={true}
           required
-          onMouseEnter={textEnter}
-          onMouseLeave={textLeave}
         />
         <textarea
           type="text"
@@ -92,8 +94,6 @@ const index = ({ textEnter, textLeave }) => {
           placeholder="Message"
           aria-required={true}
           required
-          onMouseEnter={textEnter}
-          onMouseLeave={textLeave}
         />
         <button
           className="mt-4 bg-gray-2 font-15"
@@ -108,24 +108,24 @@ const index = ({ textEnter, textLeave }) => {
 
       <motion.div {...getTransitions(0.7)} className={"mt-5"}>
         <div className={classes.footer}>
-          <Link href={ROUTES.ABOUT.path} style={{ textDecoration: "none" }}>
+          <div onClick={() => setSelectedSection("About")}>
             <span
               className="mb-0 font-16 font-gray-2"
               style={{ fontFamily: "Neurial-Regular" }}
             >
               Go Back Home
             </span>
-          </Link>
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            fill="#c6c6c6"
-          >
-            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-          </svg>
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              fill="#c6c6c6"
+            >
+              <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+            </svg>
+          </div>
         </div>
       </motion.div>
     </div>

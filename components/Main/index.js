@@ -5,7 +5,7 @@ import classes from "./Main.module.scss";
 import Link from "next/link";
 import { ROUTES } from "@/shared/routes";
 
-const index = () => {
+const index = ({ setSelectedSection }) => {
   return (
     <div className={"container-xxl font-gray-2 " + classes.mobileView}>
       <motion.h1
@@ -33,15 +33,14 @@ const index = () => {
       >
         Your friendly neighborhood MERN developer and JavaScript engineer. I
         spend my days (and often nights) painting the Internet canvas with
-        <Link href={ROUTES.PROJECT.path} style={{ textDecoration: "none" }}>
-          <span
-            className={"font-15 " + classes.project}
-            style={{ fontFamily: "Neurial-Bold" }}
-          >
-            {" "}
-            PROJECTS{" "}
-          </span>{" "}
-        </Link>
+        <span
+          className={"font-15 " + classes.project}
+          style={{ fontFamily: "Neurial-Bold" }}
+          onClick={() => setSelectedSection("Projects")}
+        >
+          {" "}
+          PROJECTS{" "}
+        </span>{" "}
         and lines of code, turning zeroes and ones into immersive, interactive
         experiences.
       </motion.p>
@@ -56,36 +55,35 @@ const index = () => {
         solutions that not only meet but exceed expectations. My goal is to
         create seamless, user-friendly applications that leave a lasting
         impression. Anyways you can
-        <Link href={ROUTES.CONTACT.path} style={{ textDecoration: "none" }}>
-          <span
-            className={"font-15 " + classes.contact}
-            style={{ fontFamily: "Neurial-Bold" }}
-          >
-            {" "}
-            CONTACT ME
-          </span>
-        </Link>
+        <span
+          className={"font-15 " + classes.contact}
+          style={{ fontFamily: "Neurial-Bold" }}
+          onClick={() => setSelectedSection("Contact")}
+        >
+          {" "}
+          CONTACT ME
+        </span>
       </motion.p>
       <motion.div {...getTransitions(0.7)} className={"mt-4"}>
         <div className={classes.footer}>
-          <Link href={ROUTES.PROJECT.path} style={{ textDecoration: "none" }}>
+          <div onClick={() => setSelectedSection("Projects")}>
             <span
               className="mb-0 font-16 font-gray-2"
               style={{ fontFamily: "Neurial-Regular" }}
             >
               Lets Continue To Projects
             </span>
-          </Link>
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            fill="#c6c6c6"
-          >
-            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-          </svg>
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              fill="#c6c6c6"
+            >
+              <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+            </svg>
+          </div>
         </div>
 
         <div

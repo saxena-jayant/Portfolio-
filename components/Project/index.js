@@ -5,7 +5,7 @@ import { ROUTES } from "@/shared/routes";
 import { getTransitions } from "@/utils";
 import classes from "../Main/Main.module.scss";
 
-const Project = () => {
+const Project = ({ setSelectedSection }) => {
   const [projects, setProjects] = useState([
     {
       title: "Zooco",
@@ -128,24 +128,24 @@ const Project = () => {
       </div>
       <motion.div {...getTransitions(0.7)} className={"mt-5"}>
         <div className={classes.footer}>
-          <Link href={ROUTES.CONTACT.path} style={{ textDecoration: "none" }}>
+          <div onClick={() => setSelectedSection("Contact")}>
             <span
               className="mb-0 font-16 font-gray-2"
               style={{ fontFamily: "Neurial-Regular" }}
             >
               Ready to contact me now ?
             </span>
-          </Link>
-          <svg
-            width="24"
-            height="24"
-            xmlns="http://www.w3.org/2000/svg"
-            fillRule="evenodd"
-            clipRule="evenodd"
-            fill="#c6c6c6"
-          >
-            <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
-          </svg>
+            <svg
+              width="24"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              fill="#c6c6c6"
+            >
+              <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+            </svg>
+          </div>
         </div>
       </motion.div>
     </div>

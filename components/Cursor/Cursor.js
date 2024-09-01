@@ -13,25 +13,16 @@ const Cursor = ({ cursorVariant, followVariant }) => {
     const handleMouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY + window.pageYOffset,
+        y: e.clientY,
       });
-      setShowPointer(true);
-    };
 
-    const handleScroll = () => {
-      setMousePosition((prevPosition) => ({
-        x: prevPosition.x,
-        y: mousePosition.y + window.pageYOffset,
-      }));
       setShowPointer(true);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -89,7 +80,11 @@ const Cursor = ({ cursorVariant, followVariant }) => {
   return (
     <div
       className={classes.mobileView}
-      style={showPointer ? { opacity: "1" } : { opacity: "0" }}
+      style={
+        showPointer
+          ? { opacity: "1", position: "fixed", zIndex: "1000" }
+          : { opacity: "0" }
+      }
     >
       <motion.div
         className={classes.cursor}

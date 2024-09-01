@@ -5,24 +5,12 @@ import { ROUTES } from "@/shared/routes";
 import Link from "next/link";
 import Resume from "../../components/Resume";
 
-const Nav = ({ textEnter, textLeave }) => {
+const Nav = ({ textEnter, textLeave, selectedSection, setSelectedSection }) => {
   const [links] = useState([
-    { name: "About", path: ROUTES.ABOUT.path },
-    { name: "Projects", path: ROUTES.PROJECT.path },
-    { name: "Contact", path: ROUTES.CONTACT.path },
+    { name: "About" },
+    { name: "Projects" },
+    { name: "Contact" },
   ]);
-  const [selectedLink, setSelectedLink] = useState("");
-
-  useEffect(() => {
-    const activeLink = window.location.pathname;
-    if (activeLink === "/") {
-      setSelectedLink("About");
-    } else if (activeLink === "/projects") {
-      setSelectedLink("Projects");
-    } else if (activeLink === "/contact_me") {
-      setSelectedLink("Contact");
-    }
-  }, []);
 
   return (
     <header id="header" className={"container " + classes.container}>
@@ -42,16 +30,15 @@ const Nav = ({ textEnter, textLeave }) => {
         data-bs-theme="dark"
       >
         <div className="container-fluid">
-          <Link href={ROUTES.ABOUT.path} style={{ textDecoration: "none" }}>
-            <Image
-              src="/images/Frame.svg"
-              alt=""
-              width={60}
-              height={60}
-              onMouseEnter={textEnter}
-              onMouseLeave={textLeave}
-            />
-          </Link>
+          <Image
+            src="/images/Frame.svg"
+            alt=""
+            width={60}
+            height={60}
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            onClick={() => setSelectedSection("About")}
+          />
           <button
             className="navbar-toggler"
             type="button"
@@ -72,19 +59,18 @@ const Nav = ({ textEnter, textLeave }) => {
                 <li
                   key={i}
                   className={"nav-item position-relative " + classes.link}
+                  onClick={() => setSelectedSection(item.name)}
                 >
-                  <Link href={item.path} style={{ textDecoration: "none" }}>
-                    <p
-                      className="mb-0 font-14 font-gray-2 px-3 py-2"
-                      onMouseEnter={textEnter}
-                      onMouseLeave={textLeave}
-                      style={
-                        item.name === selectedLink ? { fontWeight: "600" } : {}
-                      }
-                    >
-                      {item.name}
-                    </p>
-                  </Link>
+                  <p
+                    className="mb-0 font-14 font-gray-2 px-3 py-2"
+                    onMouseEnter={textEnter}
+                    onMouseLeave={textLeave}
+                    style={
+                      item.name === selectedSection ? { fontWeight: "600" } : {}
+                    }
+                  >
+                    {item.name}
+                  </p>
                   <div className={classes.underline} />
                 </li>
               ))}
