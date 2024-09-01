@@ -121,7 +121,7 @@ const index = ({ setSelectedSection }) => {
             </svg>
           </Link>
           <Link
-            href="https://www.instagram.com/ysh_saxena?igsh=YmlpNDQ2c2syM3Bz"
+            href="https://www.instagram.com/ysh_saxena"
             target="_blank"
             style={{ textDecoration: "none" }}
           >

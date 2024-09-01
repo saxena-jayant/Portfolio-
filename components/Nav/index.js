@@ -22,7 +22,7 @@ const Nav = ({ textEnter, textLeave, selectedSection, setSelectedSection }) => {
           width: "100vw",
           left: `calc((-100vw + 100%) / 2)`,
           zIndex: "10px",
-          backdropFilter: "blur(6px)",
+          backdropFilter: "blur(10px)",
         }}
       />
       <nav
@@ -59,7 +59,12 @@ const Nav = ({ textEnter, textLeave, selectedSection, setSelectedSection }) => {
                 <li
                   key={i}
                   className={"nav-item position-relative " + classes.link}
-                  onClick={() => setSelectedSection(item.name)}
+                  onClick={() => {
+                    setSelectedSection(item.name);
+                    document
+                      .getElementById("navbarNav")
+                      .classList.remove("show");
+                  }}
                 >
                   <p
                     className="mb-0 font-14 font-gray-2 px-3 py-2"
