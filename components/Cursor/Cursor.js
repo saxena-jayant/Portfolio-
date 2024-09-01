@@ -10,18 +10,28 @@ const Cursor = ({ cursorVariant, followVariant }) => {
   const [showPointer, setShowPointer] = useState(false);
 
   useEffect(() => {
-    const mouseMove = (e) => {
+    const handleMouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY,
+        y: e.clientY + window.pageYOffset,
       });
       setShowPointer(true);
     };
 
-    window.addEventListener("mousemove", mouseMove);
+    const handleScroll = () => {
+      setMousePosition((prevPosition) => ({
+        x: prevPosition.x,
+        y: mousePosition.y + window.pageYOffset,
+      }));
+      setShowPointer(true);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 

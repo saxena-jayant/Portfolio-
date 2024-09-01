@@ -25,7 +25,18 @@ const Nav = ({ textEnter, textLeave }) => {
   }, []);
 
   return (
-    <header className={"container " + classes.container}>
+    <header id="header" className={"container " + classes.container}>
+      <div
+        style={{
+          top: "0px",
+          position: "absolute",
+          height: "100%",
+          width: "100vw",
+          left: `calc((-100vw + 100%) / 2)`,
+          zIndex: "10px",
+          backdropFilter: "blur(6px)",
+        }}
+      />
       <nav
         className="navbar navbar-expand-lg bg-body-tertiary"
         data-bs-theme="dark"

@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <Transition>
-      <section style={{ width: "100vw", height: "100vh" }}>
+      <section style={{ width: "100vw", minHeight: "100vh" }}>
         <div className={classes.grid} />
         <Nav textEnter={textEnter} textLeave={textLeave} />
         <Cursor cursorVariant={cursorVariant} followVariant={followVariant} />

@@ -7,14 +7,7 @@ import { ROUTES } from "@/shared/routes";
 
 const index = () => {
   return (
-    <div
-      className={"container-xxl font-gray-2 " + classes.mobileView}
-      style={{
-        padding: "0px 100px 40px 0px",
-        maxWidth: "1150px",
-        marginTop: "100px",
-      }}
-    >
+    <div className={"container-xxl font-gray-2 " + classes.mobileView}>
       <motion.h1
         data-text="I'M JAYANT SAXENA"
         className="intro__text"
@@ -28,7 +21,6 @@ const index = () => {
           style={{
             fontFamily: "Neurial-Medium",
             letterSpacing: "10px",
-            margin: "32px 0px",
           }}
         >
           I&apos;M JAYANT SAXENA
@@ -101,7 +93,7 @@ const index = () => {
           style={{ gap: "24px", marginTop: "30px" }}
         >
           <Link
-            href="https://github.com/jayanttttt"
+            href="https://github.com/saxena-jayant"
             target="_blank"
             style={{ textDecoration: "none" }}
           >
@@ -116,7 +108,7 @@ const index = () => {
             </svg>
           </Link>
           <Link
-            href="https://www.linkedin.com/in/jayanttttt/"
+            href="https://www.linkedin.com/in/saxena-jayant/"
             target="_blank"
             style={{ textDecoration: "none" }}
           >

@@ -1,3 +1,12 @@
+.mobileView {
+  padding: 0px 100px 40px 0px;
+  max-width: 1150px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .footer {
   transition: all 1s ease;
   width: fit-content;
