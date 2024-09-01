@@ -101,7 +101,7 @@ const index = () => {
           style={{ gap: "24px", marginTop: "30px" }}
         >
           <Link
-            href="https://github.com/jayanttttt"
+            href="https://github.com/saxena-jayant"
             target="_blank"
             style={{ textDecoration: "none" }}
           >
@@ -116,7 +116,7 @@ const index = () => {
             </svg>
           </Link>
           <Link
-            href="https://www.linkedin.com/in/jayanttttt/"
+            href="https://www.linkedin.com/in/saxena-jayant/"
             target="_blank"
             style={{ textDecoration: "none" }}
           >
