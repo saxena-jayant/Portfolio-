@@ -95,13 +95,13 @@ export default function Home() {
           setSelectedSection={(data) => setSelectedSection(data)}
         />
         <Cursor cursorVariant={cursorVariant} followVariant={followVariant} />
-        <div ref={about}>
+        <div ref={about} className={classes.scrollMargin}>
           <Main setSelectedSection={(data) => setSelectedSection(data)} />
         </div>
-        <div ref={projects}>
+        <div ref={projects} className={classes.scrollMargin}>
           <Project setSelectedSection={(data) => setSelectedSection(data)} />
         </div>
-        <div ref={contact}>
+        <div ref={contact} className={classes.scrollMargin}>
           <Contact
             textEnter={textEnter}
             textLeave={textLeave}
